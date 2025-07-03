@@ -18,6 +18,7 @@ public class BankAccount {
 
     public void withdraw(double amount) {
         this.balance -= amount;
+        System.out.println("Updated Balance: $" + this.balance);
     }
 
     public void displayInfo() {

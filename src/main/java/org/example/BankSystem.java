@@ -40,7 +40,7 @@ public class BankSystem {
     public static void withdraw(ArrayList<BankAccount> bankAccounts, String accNumber, double amount) {
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
-                System.out.println("Available Balance: " + bankAccounts.get(i).getBalance());
+                bankAccounts.get(i).withdraw(amount);
             }
         }
     }
@@ -93,6 +93,12 @@ public class BankSystem {
                     deposit(bankAccounts, accNumber, amount);
                     break;
                 case 5:
+                    System.out.print("Enter Account Number: ");
+                    scanner.nextLine();
+                    accNumber = scanner.nextLine();
+                    System.out.print("Enter amount to withdraw: ");
+                    amount = scanner.nextDouble();
+                    withdraw(bankAccounts, accNumber, amount);
                     break;
                 case 6:
                     System.out.println("--- Thank you! ---");
