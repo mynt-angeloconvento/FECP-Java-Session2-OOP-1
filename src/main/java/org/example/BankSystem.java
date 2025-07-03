@@ -29,7 +29,7 @@ public class BankSystem {
         boolean found = false;
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
-                System.out.println("Available Balance: $" + bankAccounts.get(i).getBalance());
+                System.out.printf("Available Balance: $%.2f%n", bankAccounts.get(i).getBalance());
                 found = true;
             }
         }

@@ -17,7 +17,7 @@ public class BankAccount {
             return;
         }
         this.balance += amount;
-        System.out.println("Updated Balance: $" + this.balance);
+        System.out.printf("Updated Balance: $%.2f%n", this.balance);
     }
 
     public void withdraw(double amount) {
@@ -30,13 +30,13 @@ public class BankAccount {
             return;
         }
         this.balance -= amount;
-        System.out.println("Updated Balance: $" + this.balance);
+        System.out.printf("Updated Balance: $%.2f%n", this.balance);
     }
 
     public void displayInfo() {
         System.out.println("Account Number: " + this.accNumber);
         System.out.println("Account Holder: " + this.accHolderName);
-        System.out.println("Available Balance: $" + this.balance);
+        System.out.printf("Available Balance: $%.2f%n", this.balance);
     }
 
     public String getAccNumber() {
