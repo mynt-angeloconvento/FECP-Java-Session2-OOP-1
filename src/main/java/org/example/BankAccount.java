@@ -11,21 +11,22 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public void deposit(double amount){
+    public void deposit(double amount) {
         this.balance += amount;
+        System.out.println("Updated Balance: $" + this.balance);
     }
 
-    public void withdraw(double amount){
+    public void withdraw(double amount) {
         this.balance -= amount;
     }
 
-    public void displayInfo(){
+    public void displayInfo() {
         System.out.println("Account Number: " + this.accNumber);
         System.out.println("Account Holder: " + this.accHolderName);
         System.out.println("Available Balance: $" + this.balance);
     }
 
-    public String getAccNumber(){
+    public String getAccNumber() {
         return accNumber;
     }
 
