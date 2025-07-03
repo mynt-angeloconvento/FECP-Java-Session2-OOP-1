@@ -12,11 +12,19 @@ public class BankAccount {
     }
 
     public void deposit(double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid deposit amount. Please enter a positive amount.");
+            return;
+        }
         this.balance += amount;
         System.out.println("Updated Balance: $" + this.balance);
     }
 
     public void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid withdraw amount. Please enter a positive amount.");
+            return;
+        }
         this.balance -= amount;
         System.out.println("Updated Balance: $" + this.balance);
     }

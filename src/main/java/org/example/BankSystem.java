@@ -75,7 +75,6 @@ public class BankSystem {
                     if (willDeposit.toLowerCase().equals("y")) {
                         System.out.print("Enter initial deposit amount: ");
                         initialBalance = scanner.nextDouble();
-                        return;
                     }
                     createAccount(bankAccounts, accNumber, accHolderName, initialBalance);
                     break;
