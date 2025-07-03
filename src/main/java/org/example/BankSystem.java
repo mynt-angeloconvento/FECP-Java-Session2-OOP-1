@@ -1,38 +1,35 @@
 package org.example;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankSystem {
 
-    public static void createAccount(ArrayList<BankAccount> bankAccounts, String accNumber,
-                              String accHolderName, double initialBalance){
+    public static void createAccount(ArrayList<BankAccount> bankAccounts, String accNumber, String accHolderName, double initialBalance) {
         bankAccounts.add(new BankAccount(accNumber, accHolderName, initialBalance));
     }
-    public static void viewAllAccounts(ArrayList<BankAccount> bankAccounts){
+
+    public static void viewAllAccounts(ArrayList<BankAccount> bankAccounts) {
         if (bankAccounts.isEmpty()) {
             System.out.println("No bank accounts found.");
             return;
         }
         System.out.println("--- Accounts ---");
         for (int i = 0; i < bankAccounts.size(); i++) {
-//            System.out.println((i + 1) + ". " + bankAccounts.get(i).getAccNumber()
-//                    + bankAccounts.get(i).getAccHolderName() + bankAccounts.get(i).getBalance());
             System.out.println((i + 1) + ". ");
             bankAccounts.get(i).displayInfo();
         }
     }
-    public static void checkBalance(){
+
+    public static void checkBalance() {
 
     }
-    public static void deposit(){
+
+    public static void deposit() {
 
     }
-    public static void withdraw(){
 
-    }
-    public static void exit(){
+    public static void withdraw() {
 
     }
 
@@ -48,7 +45,7 @@ public class BankSystem {
         System.out.println("5. Withdraw");
         System.out.println("6. Exit");
 
-        while(true) {
+        while (true) {
             System.out.println();
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
