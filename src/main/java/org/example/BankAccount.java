@@ -5,18 +5,24 @@ public class BankAccount {
     private String accHolderName;
     private double balance;
 
-    public void deposit(String accNumber, double balance){
-        this.balance += balance;
+    public BankAccount(String accNumber, String accHolderName, double balance) {
+        this.accNumber = accNumber;
+        this.accHolderName = accHolderName;
+        this.balance = balance;
     }
 
-    public void withdraw(){
-        this.balance -= balance;
+    public void deposit(double amount){
+        this.balance += amount;
+    }
+
+    public void withdraw(double amount){
+        this.balance -= amount;
     }
 
     public void displayInfo(){
-        System.out.print("Account Number: " + this.accNumber);
-        System.out.print("Account Holder: " + this.accHolderName);
-        System.out.print("Available balance: $" + this.balance);
+        System.out.println("Account Number: " + this.accNumber);
+        System.out.println("Account Holder: " + this.accHolderName);
+        System.out.println("Available Balance: $" + this.balance);
     }
 
     public String getAccNumber(){
