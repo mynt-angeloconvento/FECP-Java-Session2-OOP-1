@@ -9,6 +9,12 @@ public class BankSystem {
             System.out.println("Invalid initial deposit. Please enter a positive number.");
             return;
         }
+        for (int i = 0; i < bankAccounts.size(); i++) {
+            if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
+                System.out.printf("Account number already exists.");
+                return;
+            }
+        }
         bankAccounts.add(new BankAccount(accNumber, accHolderName, initialBalance));
         System.out.println("Account created successfully!");
     }
