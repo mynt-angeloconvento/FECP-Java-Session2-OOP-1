@@ -25,6 +25,10 @@ public class BankAccount {
             System.out.println("Invalid withdraw amount. Please enter a positive amount.");
             return;
         }
+        if (amount >= this.balance) {
+            System.out.println("Invalid withdraw amount. Please enter an amount less than your current balance.");
+            return;
+        }
         this.balance -= amount;
         System.out.println("Updated Balance: $" + this.balance);
     }
