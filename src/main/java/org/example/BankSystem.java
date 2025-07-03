@@ -10,6 +10,7 @@ public class BankSystem {
             return;
         }
         bankAccounts.add(new BankAccount(accNumber, accHolderName, initialBalance));
+        System.out.println("Account created successfully!");
     }
 
     public static void viewAllAccounts(ArrayList<BankAccount> bankAccounts) {
@@ -25,26 +26,39 @@ public class BankSystem {
     }
 
     public static void checkBalance(ArrayList<BankAccount> bankAccounts, String accNumber) {
+        boolean found = false;
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
                 System.out.println("Available Balance: $" + bankAccounts.get(i).getBalance());
+                found = true;
             }
+        }
+        if (found == false) {
+            System.out.println("Account does not exist. Please input a valid account number.");
         }
     }
 
     public static void deposit(ArrayList<BankAccount> bankAccounts, String accNumber, double amount) {
+        boolean found = false;
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
                 bankAccounts.get(i).deposit(amount);
             }
         }
+        if (found == false) {
+            System.out.println("Account does not exist. Please input a valid account number.");
+        }
     }
 
     public static void withdraw(ArrayList<BankAccount> bankAccounts, String accNumber, double amount) {
+        boolean found = false;
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
                 bankAccounts.get(i).withdraw(amount);
             }
+        }
+        if (found == false) {
+            System.out.println("Account does not exist. Please input a valid account number.");
         }
     }
 
