@@ -21,8 +21,12 @@ public class BankSystem {
         }
     }
 
-    public static void checkBalance() {
-
+    public static void checkBalance(ArrayList<BankAccount> bankAccounts, String accNumber) {
+        for (int i = 0; i < bankAccounts.size(); i++) {
+            if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
+                System.out.println("Available Balance: " + bankAccounts.get(i).getBalance());
+            }
+        }
     }
 
     public static void deposit() {
@@ -65,7 +69,12 @@ public class BankSystem {
                     break;
                 case 2:
                     viewAllAccounts(bankAccounts);
+                    break;
                 case 3:
+                    System.out.print("Enter Account Number: ");
+                    scanner.nextLine();
+                    accNumber = scanner.nextLine();
+                    checkBalance(bankAccounts, accNumber);
                     break;
                 case 4:
                     break;
