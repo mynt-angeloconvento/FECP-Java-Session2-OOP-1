@@ -24,7 +24,7 @@ public class BankSystem {
     public static void checkBalance(ArrayList<BankAccount> bankAccounts, String accNumber) {
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
-                System.out.println("Available Balance: " + bankAccounts.get(i).getBalance());
+                System.out.println("Available Balance: $" + bankAccounts.get(i).getBalance());
             }
         }
     }
@@ -69,10 +69,14 @@ public class BankSystem {
                     String accNumber = scanner.nextLine();
                     System.out.print("Enter Holder Name: ");
                     String accHolderName = scanner.nextLine();
-//                    System.out.print("Initial Deposit? (Yes/No): ");
-//                    String willDeposit = scanner.nextLine();
-                    System.out.print("Enter initial deposit amount: ");
-                    double initialBalance = scanner.nextDouble();
+                    System.out.print("Initial Deposit? ([Y]/[N]): ");
+                    String willDeposit = scanner.nextLine();
+                    double initialBalance = 0;
+                    if (willDeposit.toLowerCase().equals("y")) {
+                        System.out.print("Enter initial deposit amount: ");
+                        initialBalance = scanner.nextDouble();
+                        return;
+                    }
                     createAccount(bankAccounts, accNumber, accHolderName, initialBalance);
                     break;
                 case 2:
