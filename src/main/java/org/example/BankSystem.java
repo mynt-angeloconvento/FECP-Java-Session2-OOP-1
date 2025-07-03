@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankSystem {
-
     public static void createAccount(ArrayList<BankAccount> bankAccounts, String accNumber, String accHolderName, double initialBalance) {
+        if (initialBalance < 0) {
+            System.out.println("Invalid initial deposit. Please enter a positive number.");
+            return;
+        }
         bankAccounts.add(new BankAccount(accNumber, accHolderName, initialBalance));
     }
 
