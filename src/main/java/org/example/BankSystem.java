@@ -32,40 +32,33 @@ public class BankSystem {
     }
 
     public static void checkBalance(ArrayList<BankAccount> bankAccounts, String accNumber) {
-        boolean found = false;
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
                 System.out.printf("Available Balance: $%.2f%n", bankAccounts.get(i).getBalance());
-                found = true;
+                return;
             }
         }
-        if (found == false) {
-            System.out.println("Account does not exist. Please input a valid account number.");
-        }
+        System.out.println("Account does not exist. Please input a valid account number.");
     }
 
     public static void deposit(ArrayList<BankAccount> bankAccounts, String accNumber, double amount) {
-        boolean found = false;
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
                 bankAccounts.get(i).deposit(amount);
+                return;
             }
         }
-        if (found == false) {
-            System.out.println("Account does not exist. Please input a valid account number.");
-        }
+        System.out.println("Account does not exist. Please input a valid account number.");
     }
 
     public static void withdraw(ArrayList<BankAccount> bankAccounts, String accNumber, double amount) {
-        boolean found = false;
         for (int i = 0; i < bankAccounts.size(); i++) {
             if (bankAccounts.get(i).getAccNumber().equals(accNumber)) {
                 bankAccounts.get(i).withdraw(amount);
+                return;
             }
         }
-        if (found == false) {
-            System.out.println("Account does not exist. Please input a valid account number.");
-        }
+        System.out.println("Account does not exist. Please input a valid account number.");
     }
 
     public static void main(String[] args) {
