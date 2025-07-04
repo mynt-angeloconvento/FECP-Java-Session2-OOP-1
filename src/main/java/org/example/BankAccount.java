@@ -33,10 +33,13 @@ public class BankAccount {
         System.out.printf("Updated Balance: $%.2f%n", this.balance);
     }
 
-    public void displayInfo() {
+    public String displayInfo() {
         System.out.println("Account Number: " + this.accNumber);
         System.out.println("Account Holder: " + this.accHolderName);
         System.out.printf("Available Balance: $%.2f%n", this.balance);
+        return "Account Number: " + this.accNumber + "\n" +
+                "Account Holder: " + this.accHolderName + "\n" +
+                "Available Balance: " + this.balance;
     }
 
     public String getAccNumber() {
